@@ -1,6 +1,6 @@
 import './App.css'
 
-import { useEffect } from 'react'
+import React, { useEffect } from 'react'
 
 import { GlobalModalWrapper } from './component'
 import { GlobalModal } from './component/util/Modal'

@@ -1,4 +1,4 @@
-import '../styles/Modal.css'
+// import '../styles/Modal.css'
 
 import React, { forwardRef } from 'react'
 
@@ -30,6 +30,7 @@ interface IModalProps {
 export const ModalComponent = forwardRef<HTMLDivElement, IModalProps>(
   (
     {
+      children,
       open,
       className = '',
       isCloseable = false,
