@@ -21,7 +21,8 @@ export default defineConfig((configEnv) => ({
   build: {
     lib: {
       entry: resolve('src', 'component/index.ts'),
-      name: 'ReactFeatureFlag',
+      name: 'ReactGlobalModal',
+      formats: ['es', 'umd'],
       fileName: (format) => `react-global-modal.${format}.js`,
     },
     rollupOptions: {
