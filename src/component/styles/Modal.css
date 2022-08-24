@@ -11,14 +11,14 @@
   opacity: 0;
   z-index: 999999;
   background-color: rgba(0, 0, 0, 0.2);
-  transition: all .5s ease-in-out;
+  transition: all 0.5s ease-in-out;
   overscroll-behavior: contain;
   width: 100vw;
   height: 100vh;
 }
 
 .modal.modal-open {
-  animation: fadeIn .1s;
+  animation: fadeIn 0.1s;
   pointer-events: auto;
   visibility: visible;
   opacity: 1;
@@ -30,11 +30,10 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
- 
 }
 
 .modalContent {
-  animation: fadeIn 0.5s, slideIn .4s linear;
+  animation: fadeIn 0.5s, slideIn 0.4s linear;
   max-width: calc(100vw - 4rem);
   max-height: calc(100vh - 4rem);
   background: white;

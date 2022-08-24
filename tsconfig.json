@@ -22,7 +22,7 @@
       "react-global-modal": [ "./lib/index.ts" ]
     }
   },
-  "include": ["./lib"],
+  "include": ["./src"],
   "references": [{ "path": "./tsconfig.node.json" }],
   "exclude": ["node_modules"]
 }
