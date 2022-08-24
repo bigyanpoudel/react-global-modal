@@ -19,8 +19,12 @@
      "declarationMap": true,
     "baseUrl": ".",
      "paths": {
-      "react-global-modal": [ "./lib/index.ts" ]
-    }
+      "react-global-modal": [ "src/component/index.ts" ]
+    },
+    "typeRoots": [
+      "node_modules/@types",
+      "src/component/index.d.ts"
+    ]
   },
   "include": ["./src"],
   "references": [{ "path": "./tsconfig.node.json" }],
