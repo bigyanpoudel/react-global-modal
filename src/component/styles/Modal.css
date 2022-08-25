@@ -186,6 +186,10 @@
   background-color: #d10a3d;
 }
 
+.position{
+  position: relative;
+}
+
 @media screen and (max-width: 540px) {
   .modal-body {
     width: 93vw !important;

@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 
 import { IButtonProps } from '../Modal/ModalActions'
+import { IModalProps } from '../Modal/ModalComponent'
 import { GlobalModalComponent } from '.'
 
 export type GlobalModalComponentProps = {
@@ -32,8 +33,15 @@ export interface IGlobalModalOpenProps extends GlobalModalComponentProps {
   component?: React.FC<any> // React FC as component
   ref?: any // @todo specify ref object
   id?: number
+  // customModal?: React.FC<any>
 }
-export class GlobalModalWrapper extends Component<unknown, { modals: IGlobalModalOpenProps[] }> {
+export type GlobalModalWrapperProps = {
+  customModal?: React.FC<any>
+}
+export class GlobalModalWrapper extends Component<
+  GlobalModalWrapperProps,
+  { modals: IGlobalModalOpenProps[] }
+> {
   state: any = {
     modals: [],
   }
@@ -82,12 +90,14 @@ export class GlobalModalWrapper extends Component<unknown, { modals: IGlobalModa
 
   render() {
     const { modals } = this.state
+    const { customModal } = this.props
     return modals.map((sheet: any, index: number) => {
       return (
         <GlobalModalComponent
           key={sheet.id + '' + index}
           closeModal={this.close.bind(this)}
           {...sheet}
+          customModal={customModal}
         />
       )
     })

@@ -14,7 +14,7 @@
   },
   "main": "./dist/react-global-modal.umd.js",
   "module": "./dist/react-global-modal.es.js",
-  "types": "./dist/lib/index.d.ts",
+  "types": "./dist/index.d.ts",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
@@ -70,7 +70,16 @@
     "type": "git",
     "url": "https://github.com/react-global-modal"
   },
-  "keywords": [],
+  "keywords": [
+    "react-modal",
+    "modal",
+    "global-modal",
+    "react-global-modal",
+    "custom-modal",
+    "react",
+    "react-dailog",
+    "dailog"
+  ],
   "author": "bigyan poudel",
   "bugs": {
     "url": "https://github.com/bigyanpoudel/react-global-modal/issues"

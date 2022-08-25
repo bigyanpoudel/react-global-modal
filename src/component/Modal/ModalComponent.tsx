@@ -5,7 +5,7 @@ import React, { forwardRef } from 'react'
 
 import { IButtonProps, ModalActions } from './ModalActions'
 import { ModalHeader } from './ModalHeader'
-interface IModalProps {
+export interface IModalProps {
   open?: boolean
   responsive?: boolean
   children?: any
@@ -95,11 +95,7 @@ export const ModalComponent = forwardRef<HTMLDivElement, IModalProps>(
       >
         <div className={modalWrapper}>
           <div className={modalContent}>
-            <div
-              style={{
-                position: 'relative',
-              }}
-            >
+            <div className="position">
               {!hideHeader ? (
                 <ModalHeader
                   className={headerClassName}
