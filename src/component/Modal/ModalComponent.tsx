@@ -1,5 +1,6 @@
 // import '../styles/Modal.css'
 
+import clsx from 'clsx'
 import React, { forwardRef } from 'react'
 
 import { IButtonProps, ModalActions } from './ModalActions'
@@ -43,14 +44,47 @@ export const ModalComponent = forwardRef<HTMLDivElement, IModalProps>(
       contentClassName = '',
       onModalClose = () => {},
       hideCloseIcon = false,
+      isSlidePane = false,
+      position = 'right',
+      modalSize = 'sm',
     }: IModalProps,
     ref: any,
   ): JSX.Element => {
+    const classes = clsx(
+      'modal',
+      'modal-open',
+      // {
+      //   'modal-open': open,
+      // },
+      className,
+    )
+
+    const modalWrapper = clsx(
+      // 'modal-wrapper',
+      {
+        'modal-wrapper': !isSlidePane,
+        'slidepane-wrapper': isSlidePane,
+        right: isSlidePane && position === 'right',
+        left: isSlidePane && position === 'left',
+      },
+    )
+
+    const modalBody = clsx(
+      'modal-body',
+      {
+        'w-xs': modalSize === 'xs',
+        'w-sm': modalSize === 'sm',
+        'w-md': modalSize === 'md',
+        'w-lg': modalSize === 'lg',
+      },
+      contentClassName,
+    )
+    const modalContent = clsx('modalContent')
     return (
       <div
         aria-hidden={!open}
         aria-modal={open}
-        className={`modal modal-open ${className}`}
+        className={classes}
         onClick={(e) => {
           e.stopPropagation()
           if (e.target === e.currentTarget) {
@@ -59,8 +93,8 @@ export const ModalComponent = forwardRef<HTMLDivElement, IModalProps>(
           }
         }}
       >
-        <div className="moda-wrapper">
-          <div className="modalContent">
+        <div className={modalWrapper}>
+          <div className={modalContent}>
             <div
               style={{
                 position: 'relative',
@@ -92,7 +126,7 @@ export const ModalComponent = forwardRef<HTMLDivElement, IModalProps>(
                 )
               )}
             </div>
-            <div className={`modal-body ${contentClassName}`}>{children}</div>
+            <div className={modalBody}>{children}</div>
             {actions?.length > 0 && <ModalActions actions={actions} className={actionClassName} />}
           </div>
         </div>

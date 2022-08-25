@@ -14,6 +14,7 @@ function App() {
     GlobalModal.push({
       component: ComponentText,
       title: 'hellllll',
+      // isSlidePane: true,
     })
   }
   return (
@@ -27,8 +28,8 @@ const ComponentText = () => {
   return (
     <div
       style={{
-        height: 800,
-        width: 500,
+        height: '800px',
+        // width: 500,x
       }}
     >
       hello
