@@ -12,9 +12,7 @@ function App() {
   useEffect(() => {
     GlobalModal.setUpModal(globalModalRef)
   })
-  const openModal = async () => {
-    const value = await AsyncConfirmationModal({})
-  }
+  const openModal = async () => {}
   return (
     <div className="App">
       <button onClick={openModal}>Open</button>
