@@ -20,7 +20,8 @@ React Global Modal is a lightweight, simple, customizeable and ready to use moda
 ## Table of Contents
   - [Installation](#installation)
   - [Usage](#usage)
-      - [1. Configure React Global Modal](#1-configure-react-global-modal)
+      - [Configure React Global Modal](#1-configure-react-global-modal)
+      - [Triggering exposed modal methods](#2-triggering-exposed-modal-methods)
 
 ## Installation
 
@@ -69,5 +70,43 @@ The ``` GlobalModal``` consist of set method using which we can open and close t
     3. pop
     4. add
 
-1. setUpModal
-    You can use this method to register the modal reference and should be defined in the root of the project as mention above in [Configure React Global Modal](#1-configure-react-global-modal)
+##### 1. setUpModal
+You can use this method to register the modal reference and should be defined in the root of the project as mention above in [Configure React Global Modal](#1-configure-react-global-modal)
+
+##### 2. push
+You can use this method to open the modal which conatin a list of props along with the component that we want to display inside the modal.
+
+```jsx
+  const openModal = async () => {
+    GlobalModal.push({
+      component:Component, //Component represent the component that you want to display inside the modal
+      title:"Modal title" //modal title
+      props:{   //props object are represented as the props to the component
+        data:data   
+      }
+    })
+  }
+```
+The methods contain different others props which will be described in details below
+
+##### 3. pop
+You can use this method to close the modal. In order to simply close the modal you can use like below:
+```jsx
+
+    GlobalModal.pop()
+
+```
+#### 4. add
+You can use this method for updating any props values inside the modal. And this can be triggered from outside the modal as well as inside the modal
+
+```jsx
+
+ GlobalModal.add({
+      props: {       // this is the updated props which will be passed to the component inside modal
+        value: newValue, 
+      },
+      modalIndex: 0,  // it indicate current number of modal open
+ })
+
+```
+In above method, ``` modalIndex ``` represents the index of opened modal. If you have one modal opened, then ``` modalIndex ``` will be 0 else if you have second modal opened on top of first one then the``` modalIndex ``` will be 1 and soon. 

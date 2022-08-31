@@ -12,7 +12,14 @@ function App() {
   useEffect(() => {
     GlobalModal.setUpModal(globalModalRef)
   })
-  const openModal = async () => {}
+  const openModal = async () => {
+    GlobalModal.add({
+      props: {
+        value: newValue,
+      },
+      modalIndex: 1,
+    })
+  }
   return (
     <div className="App">
       <button onClick={openModal}>Open</button>

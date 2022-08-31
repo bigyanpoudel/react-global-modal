@@ -18,9 +18,9 @@ export class GlobalModal {
     }
   }
 
-  static add({ ...props }, index: number) {
+  static add({ props, modalIndex }: { props: Record<any, any>; modalIndex: number }) {
     if ((this as any)._globalModalRef) {
-      ;((this as any)._globalModalRef as any).updateModalProps({ ...props }, index)
+      ;((this as any)._globalModalRef as any).updateModalProps({ ...props }, modalIndex)
     }
   }
 
