@@ -15,12 +15,9 @@ React Global Modal is a lightweight, simple, customizeable and ready to use moda
 - Promotes reusability
 - Easy to maintain
 - Enhance the performance as the main component never re-render when opening the modal
+- Multiple modal can be pushed on top of another
 
 ## Table of Contents
-
-- [React-Global-Modal](#react-global-modal)
-  - [Features](#features)
-  - [Table of Contents](#table-of-contents)
   - [Installation](#installation)
   - [Usage](#usage)
       - [1. Configure React Global Modal](#1-configure-react-global-modal)
@@ -34,7 +31,7 @@ To install, you can use [npm](https://npmjs.org/) or [yarn](https://yarnpkg.com)
 
 ## Usage
 
-In order to use, you must follow the steps below
+In order to use, you must follow the steps below:
 
 #### 1. Configure React Global Modal
 
@@ -61,3 +58,14 @@ function App() {
 
 export default App
 ```
+Here ``` GlobalModal.setUpModal ``` methods register our modal by storing the reference of the modal obtained from the ``` GlobalModalWrapper ```.
+
+#### 2. Triggering exposed modal methods
+
+The ``` GlobalModal``` consist of set method using which we can open and close the modal and also can update the props passed to the modal. It consist of following methods:
+
+    i. setUpModal
+    ii. push
+    iii. pop
+    iv. add
+
