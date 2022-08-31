@@ -64,8 +64,10 @@ Here ``` GlobalModal.setUpModal ``` methods register our modal by storing the re
 
 The ``` GlobalModal``` consist of set method using which we can open and close the modal and also can update the props passed to the modal. It consist of following methods:
 
-    i. setUpModal
-    ii. push
-    iii. pop
-    iv. add
+    1. setUpModal
+    2. push
+    3. pop
+    4. add
 
+1. setUpModal
+    You can use this method to register the modal reference and should be defined in the root of the project as mention above in [Configure React Global Modal](#1-configure-react-global-modal)
