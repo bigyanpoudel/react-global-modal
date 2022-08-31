@@ -22,6 +22,10 @@ React Global Modal is a lightweight, simple, customizeable and ready to use moda
   - [Usage](#usage)
       - [Configure React Global Modal](#1-configure-react-global-modal)
       - [Triggering exposed modal methods](#2-triggering-exposed-modal-methods)
+  - [Examples](#examples)
+  - [Modal as a SlidePane](#modal-as-a-slidepane)
+  - [Confirmation Modal](#confirmation-modal)
+  - [Async confirmation Modal](#async-confirmation-modal)
 
 ## Installation
 
@@ -232,8 +236,8 @@ export default Example
 ```
 You can also include the header and footer in the component which will by displayed inside the modal but you have to disable the header present inside the modal by passing the props ``` hideHeader: true ```
 
-#### 3. Simple example for slidePane
-You can open existing modal as the slide pane which is shown below:
+#### Modal as a SlidePane
+The slide pane are the one that appears on the side that may be left or right of the screen. You can open existing modal as the slide pane:
 
 ```jsx
 import React from 'react'
