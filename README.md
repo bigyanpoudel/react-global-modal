@@ -18,10 +18,11 @@ React Global Modal is a lightweight, simple, customizeable and ready to use moda
 
 ## Table of Contents
 
-- [Installation](#installation)
-- [Usage](#api-documentation)
-- [Examples](#examples)
-- [Demos](#demos)
+- [React-Global-Modal](#react-global-modal)
+  - [Features](#features)
+  - [Table of Contents](#table-of-contents)
+  - [Installation](#installation)
+  - [Usage](#usage)
 
 ## Installation
 
@@ -34,7 +35,7 @@ To install, you can use [npm](https://npmjs.org/) or [yarn](https://yarnpkg.com)
 
 In order to use, you must follow the steps below
 
-### Configure React Global Modal
+1. #### Configure React Global Modal
 
 At first, you need to configure the modal at the root of your project as shown bellow
 
