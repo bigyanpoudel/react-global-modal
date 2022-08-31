@@ -10,8 +10,6 @@ export type GlobalModalComponentProps = {
   onClose?: () => void
   closeModal?: () => void
   isOpen?: boolean
-  responsive?: boolean
-  children?: any
   className?: string
   modalSize?: 'xs' | 'sm' | 'md' | 'lg'
   isCloseable?: boolean
@@ -24,7 +22,6 @@ export type GlobalModalComponentProps = {
   actionClassName?: string
   contentClassName?: string
   hideCloseIcon?: boolean
-  height?: number
   width?: string
   isSlidePane?: boolean
   position?: 'right' | 'left'

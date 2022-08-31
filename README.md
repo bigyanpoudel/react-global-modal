@@ -59,7 +59,7 @@ function App() {
 
 export default App
 ```
-Here ``` GlobalModal.setUpModal ``` methods register our modal by storing the reference of the modal obtained from the ``` GlobalModalWrapper ```.
+Here ``` GlobalModal.setUpModal ``` methods register our modal by storing the reference of the modal obtained from the ``` GlobalModalWrapper ```.  ``` react-global-modal/dist/style.css ``` is the styles of the modal which you also need to import in the root file of the project.
 
 #### 2. Triggering exposed modal methods
 
@@ -87,8 +87,35 @@ You can use this method to open the modal which conatin a list of props along wi
     })
   }
 ```
-The methods contain different others props which will be described in details below
+The methods contain different others properties which are described below
+###### Properties
 
+|   Props                       |  Types             | Required          | Default       | Description                               |
+|   --------------------------  |  ----------------- | -----------------:| -------------:| -----------------------------------------:|
+| component                     |  React.FC<any>     | ✅                |               | Main component that will be displayed inside modal|
+
+  component?: React.FC<any>
+  props?: { [key: string]: unknown }
+  onClose?: () => void
+  closeModal?: () => void
+  isOpen?: boolean
+  className?: string
+  modalSize?: 'xs' | 'sm' | 'md' | 'lg'
+  isCloseable?: boolean
+  closeButtonClassName?: string
+  title?: string
+  hideHeader?: boolean
+  headerComponent?: React.FC<any>
+  headerClassName?: string
+  actions?: IButtonProps[]
+  actionClassName?: string
+  contentClassName?: string
+  hideCloseIcon?: boolean
+  height?: number
+  width?: string
+  isSlidePane?: boolean
+  position?: 'right' | 'left'
+}
 ##### 3. pop
 You can use this method to close the modal. In order to simply close the modal you can use like below:
 ```jsx
@@ -102,7 +129,7 @@ You can use this method for updating any props values inside the modal. And this
 ```jsx
 
  GlobalModal.add({
-      props: {       // this is the updated props which will be passed to the component inside modal
+      props: {       // this is the updated props which will be passed to the component inside the modal
         value: newValue, 
       },
       modalIndex: 0,  // it indicate current number of modal open
