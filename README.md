@@ -302,3 +302,8 @@ export default Example
 ```
 You can open slide pane by passing the props ``` isSlidePane: true ``` while opening the modal. Their is additional properties for side pane that is position which determines whether you want it be right or left.
 
+
+# License
+
+MIT © [bigyanpoudel](https://github.com/bigyanpoudel)
+
