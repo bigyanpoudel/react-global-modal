@@ -100,6 +100,7 @@
   overflow-y: auto;
   flex: 1;
   position: relative;
+  /* width: "100%"; */
 }
 
 .modal-body.w-xs {
@@ -123,7 +124,7 @@
 .close-wrapper {
   position: absolute;
   right: 10px;
-  top: 50%;
+  top: 20px;
   transform: translatey(-50%);
   font-size: 17px;
   cursor: pointer;
@@ -199,4 +200,8 @@
   .modal-body {
     width: 93vw !important;
   }
+}
+
+.close{
+  top:80px,
 }

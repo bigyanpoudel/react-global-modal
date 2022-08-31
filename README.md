@@ -87,8 +87,7 @@ You can use this method to open the modal which conatin a list of props along wi
     })
   }
 ```
-The methods contain different others properties which are described below
-###### Properties
+The methods contain different others properties which are described below:
 
 |   Props                       |  Types                            | Required             | Default        | Description                               |
 |   --------------------------  |  -------------------------------  | --------------------:| -------------: | -----------------------------------------:|
@@ -132,3 +131,174 @@ You can use this method for updating any props values inside the modal. And this
 
 ```
 In above method, ``` modalIndex ``` represents the index of opened modal. If you have one modal opened, then ``` modalIndex ``` will be 0 else if you have second modal opened on top of first one then the``` modalIndex ``` will be 1 and soon. 
+
+### Examples
+
+#### 1. Simple example with in built header and no footer
+```jsx
+const Example = () => {
+  const openModal = async () => {
+    GlobalModal.push({
+      component: ComponentText,
+      props: {
+        test: 'Testing',
+      },
+    })
+  }
+
+  return (
+    <div>
+      <button onClick={openModal}>Open</button>
+    </div>
+  )
+}
+const ComponentText = ({ test }: { test: string }) => {
+  return (
+    <div
+      style={{
+        height: '400px',
+      }}
+    >
+      hello {test}
+    </div>
+  )
+}
+export default Example
+```
+#### 2. Simple example with header and  footer inside component
+```jsx
+import React from 'react'
+import { GlobalModal } from 'react-global-modal'
+
+const Example = () => {
+  const openModal = async () => {
+    GlobalModal.push({
+      component: ComponentText,
+      props: {
+        test: 'Testing',
+      },
+      hideHeader: true,
+    })
+  }
+
+  return (
+    <div>
+      <button onClick={openModal}>Open</button>
+    </div>
+  )
+}
+const ComponentText = ({ test }: { test: string }) => {
+  return (
+    <div
+      style={{
+        height: '400px',
+      }}
+    >
+      <div
+        style={{
+          height: '2rem',
+        }}
+      >
+        Header
+      </div>
+      hello {test}
+      <div
+        style={{
+          position: 'absolute',
+          left: 0,
+          bottom: 0,
+          width: '100%',
+          borderTop: '1px solid rgb(230 232 240)',
+        }}
+      >
+        <div
+          style={{
+            display: 'flex',
+            flexDirection: 'row',
+            padding: '8px 10px',
+            justifyContent: 'flex-end',
+            gridGap: '5px',
+          }}
+        >
+          <button className="btn btn-error">Close</button>
+          <button className="btn btn-primary"> okay</button>
+        </div>
+      </div>
+    </div>
+  )
+}
+export default Example
+
+```
+You can also include the header and footer in the component which will by displayed inside the modal but you have to disable the header present inside the modal by passing the props ``` hideHeader: true ```
+
+#### 3. Simple example for slidePane
+You can open existing modal as the slide pane which is shown below:
+
+```jsx
+import React from 'react'
+import { GlobalModal } from 'react-global-modal'
+
+const Example = () => {
+  const openModal = async () => {
+    GlobalModal.push({
+      component: ComponentText,
+      props: {
+        test: 'Testing',
+      },
+      hideHeader: true,
+      isSlidePane: true,
+    })
+  }
+
+  return (
+    <div>
+      <button onClick={openModal}>Open</button>
+    </div>
+  )
+}
+const ComponentText = ({ test }: { test: string }) => {
+  return (
+    <div
+      style={{
+        height: '400px',
+      }}
+    >
+      <div
+        style={{
+          height: '2rem',
+        }}
+      >
+        Header
+      </div>
+      hello {test}
+      <div
+        style={{
+          position: 'absolute',
+          left: 0,
+          bottom: 0,
+          width: '100%',
+          borderTop: '1px solid rgb(230 232 240)',
+        }}
+      >
+        <div
+          style={{
+            display: 'flex',
+            flexDirection: 'row',
+            padding: '8px 10px',
+            justifyContent: 'flex-end',
+            gridGap: '5px',
+          }}
+        >
+          <button className="btn btn-error">Close</button>
+          <button className="btn btn-primary"> okay</button>
+        </div>
+      </div>
+    </div>
+  )
+}
+export default Example
+
+```
+You can open slide pane by passing the props ``` isSlidePane: true ``` while opening the modal. Their is additional properties for side pane that is position which determines whether you want it be right or left.
+

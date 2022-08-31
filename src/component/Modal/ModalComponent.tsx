@@ -110,7 +110,7 @@ export const ModalComponent = forwardRef<HTMLDivElement, IModalProps>(
               ) : (
                 !hideCloseIcon && (
                   <div
-                    className="close-wrapper"
+                    className="close-wrapper close"
                     onClick={() => {
                       if (!isCloseable) {
                         onModalClose()
