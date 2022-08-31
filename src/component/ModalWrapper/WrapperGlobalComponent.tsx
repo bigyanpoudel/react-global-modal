@@ -8,8 +8,6 @@ export type GlobalModalComponentProps = {
   component?: React.FC<any>
   props?: { [key: string]: unknown }
   onClose?: () => void
-  closeModal?: () => void
-  isOpen?: boolean
   className?: string
   modalSize?: 'xs' | 'sm' | 'md' | 'lg'
   isCloseable?: boolean

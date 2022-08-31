@@ -93,29 +93,24 @@ The methods contain different others properties which are described below
 |   Props                       |  Types             | Required          | Default       | Description                               |
 |   --------------------------  |  ----------------- | -----------------:| -------------:| -----------------------------------------:|
 | component                     |  React.FC<any>     | ✅                |               | Main component that will be displayed inside modal|
+| props                         | { [key: string]: unknown }|            |               | It include the props of the component which can be accessed inside the modal |
+| onClose                       | Function            |                  |               | Is used to perfrom certain action when the modal is about to close |
+| className                     | string              |                  |               | It is used to provde the styles for outermost element of the modal and can be used accordingly with custom modal |
+| modalSize                     | ```'xs' | 'sm' | 'md' | 'lg'``` | ✅    | md            | It is used to control the width of the modal |
+| isCloseable                   | boolean              |                  | false         | It indicate wheather the modal can be closed or not. If true, you can only close the modal manualy from the component inside the modal using the modal close method |
+|  closeButtonClassName         | string                |                  |               | It is used to style the close icon that is present inside the modal |
+| title                         | string                |                   |               | If you want to have a title in the modal you can use it.
+|  hideHeader                   | boolean               |                   | false         | It is used to hide the deafult heading component present in the modal |
+| headerComponent               |   React.FC<any>       |                   |                | You can pass the custom heading component in the modal |
+|  headerClassName              | string                |                   |                | It is used to style the heading the component |
+|  actions                      |    IButtonProps[]     |                   |                 | It includes the list of button that can be included in the bottom of the modal |
+|  actionClassName              | string                |                   |                | It is used to style the footer of the component |
+|   contentClassName            | string                |                   |                | It is used to style the wrapper which wraps the passed component to the modal |  
+|  hideCloseIcon                | boolean               |                   |                 | It is used to hide the close icon from the modal |
+|   width                       | string                |                   |                 | It is used to include the custom width to the modal |
+|isSlidePane                    | boolean               |                   | false           | If it is true, then the modal will act as the slidePane and will be in right or left |
+| position                      |  ``` 'right' | 'left' ``` |               | right            | It can only be used when the ``` isSlidePane ```   is true. Using this you can align the slidPane to right or left |
 
-  component?: React.FC<any>
-  props?: { [key: string]: unknown }
-  onClose?: () => void
-  closeModal?: () => void
-  isOpen?: boolean
-  className?: string
-  modalSize?: 'xs' | 'sm' | 'md' | 'lg'
-  isCloseable?: boolean
-  closeButtonClassName?: string
-  title?: string
-  hideHeader?: boolean
-  headerComponent?: React.FC<any>
-  headerClassName?: string
-  actions?: IButtonProps[]
-  actionClassName?: string
-  contentClassName?: string
-  hideCloseIcon?: boolean
-  height?: number
-  width?: string
-  isSlidePane?: boolean
-  position?: 'right' | 'left'
-}
 ##### 3. pop
 You can use this method to close the modal. In order to simply close the modal you can use like below:
 ```jsx
