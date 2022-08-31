@@ -23,6 +23,8 @@ React Global Modal is a lightweight, simple, customizeable and ready to use moda
   - [Table of Contents](#table-of-contents)
   - [Installation](#installation)
   - [Usage](#usage)
+    - [1. Configure React Global Modal](#1-configure-react-global-modal)
+    - [1. Opening the Modal](#1-opening-the-modal)
 
 ## Installation
 
@@ -34,29 +36,34 @@ To install, you can use [npm](https://npmjs.org/) or [yarn](https://yarnpkg.com)
 ## Usage
 
 In order to use, you must follow the steps below
+   ### 1. Configure React Global Modal
 
-1. #### Configure React Global Modal
+        At first, you need to configure the modal at the root of your project as shown bellow
 
-At first, you need to configure the modal at the root of your project as shown bellow
+        ```jsx
+        import React, { useEffect } from 'react'
+        import { GlobalModalWrapper, GlobalModal } from 'react-global-modal'
+        import 'react-global-modal/dist/style.css'
 
-```jsx
-import React, { useEffect } from 'react'
-import { GlobalModalWrapper, GlobalModal } from 'react-global-modal'
-import 'react-global-modal/dist/style.css'
+        let globalModalRef: any = null
 
-let globalModalRef: any = null
+        function App() {
 
-function App() {
-  useEffect(() => {
-    GlobalModal.setUpModal(globalModalRef)
-  }, [])
+            useEffect(() => {
 
-  return (
-    <div className="App">
-      <GlobalModalWrapper ref={(el) => (globalModalRef = el)} />
-    </div>
-  )
-}
+             GlobalModal.setUpModal(globalModalRef)
 
-export default App
-```
+            }, [])
+
+            return (
+            <div className="App">
+                <GlobalModalWrapper ref={(el) => (globalModalRef = el)} />
+            </div>
+            )
+        }
+
+        export default App
+        ```
+        Here, ``` GlobalModal.setUpModal``` method register reference of our modal which is obtained from GlobalModalWrapper component
+
+   ### 1. Opening the Modal
