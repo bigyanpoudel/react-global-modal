@@ -1,7 +1,7 @@
 // import '../styles/Modal.css'
 
 import clsx from 'clsx'
-import React, { forwardRef } from 'react'
+import React, { forwardRef, useEffect } from 'react'
 
 import { IButtonProps, ModalActions } from './ModalActions'
 import { ModalHeader } from './ModalHeader'
@@ -26,6 +26,8 @@ export interface IModalProps {
   width?: string
   isSlidePane?: boolean
   position?: 'right' | 'left'
+  isDark?: boolean
+  disableTheme?: boolean
 }
 
 export const ModalComponent = forwardRef<HTMLDivElement, IModalProps>(
@@ -47,9 +49,23 @@ export const ModalComponent = forwardRef<HTMLDivElement, IModalProps>(
       isSlidePane = false,
       position = 'right',
       modalSize = 'sm',
+      isDark = false,
+      disableTheme = false,
     }: IModalProps,
     ref: any,
   ): JSX.Element => {
+    useEffect(() => {
+      if (!disableTheme) {
+        const attri = document.documentElement.getAttributeNames()
+        if (isDark && !attri.includes('dark')) {
+          document.documentElement.setAttribute('data-theme', 'dark')
+        }
+        if (attri.includes('dark') && !isDark) {
+          document.documentElement.setAttribute('data-theme', 'dark')
+        }
+      }
+    }, [isDark, disableTheme])
+
     const classes = clsx(
       'modal',
       'modal-open',
@@ -57,6 +73,9 @@ export const ModalComponent = forwardRef<HTMLDivElement, IModalProps>(
       //   'modal-open': open,
       // },
       className,
+      {
+        dark: isDark,
+      },
     )
 
     const modalWrapper = clsx(
@@ -85,6 +104,7 @@ export const ModalComponent = forwardRef<HTMLDivElement, IModalProps>(
         aria-hidden={!open}
         aria-modal={open}
         className={classes}
+        dark-them="light"
         onClick={(e) => {
           e.stopPropagation()
           if (e.target === e.currentTarget) {

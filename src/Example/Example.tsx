@@ -38,7 +38,7 @@ const ComponentText = ({ test }: { test: string }) => {
           left: 0,
           bottom: 0,
           width: '100%',
-          borderTop: '1px solid rgb(230 232 240)',
+          borderTop: '0.5px solid hsl(220 13% 69%)',
         }}
       >
         <div
