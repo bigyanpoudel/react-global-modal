@@ -1,18 +1,17 @@
-
-html[data-theme='dark']{
+html[data-theme='dark'] {
   --modal-background: hsl(220 18% 20%);
-  --modal-color:hsl(220 13% 69%);
-  --modal-border:hsl(220 13% 69%);
-  --modal-icon:hsl(218 18% 12%);
-  --modal-icon-color:hsl(220 13% 69%);
+  --modal-color: hsl(220 13% 69%);
+  --modal-border: hsl(220 13% 69%);
+  --modal-icon: hsl(218 18% 12%);
+  --modal-icon-color: hsl(220 13% 69%);
 }
 
-html{
+html {
   --modal-background: white;
   --modal-color: black;
-  --modal-border:rgb(230 232 240);
-  --modal-icon:rgb(190, 190, 190);
-  --modal-icon-color:white;
+  --modal-border: rgb(230 232 240);
+  --modal-icon: rgb(190, 190, 190);
+  --modal-icon-color: white;
 }
 
 .modal {
