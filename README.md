@@ -1,15 +1,16 @@
 # React-Global-Modal
 
+React Global Modal is a lightweight, simple, customizeable and ready to use modal in the global scope in the react project.
+
+
 [![npm version](https://img.shields.io/npm/v/react-global-modal.svg?style=flat-square)](https://www.npmjs.com/package/react-global-modal)
 [![npm downloads](https://img.shields.io/npm/dm/react-global-modal.svg?style=flat-square)](https://www.npmjs.com/package/react-global-modal)
 ![npm bundle size](https://img.shields.io/bundlephobia/minzip/react-global-modal)
 
-React Global Modal is a lightweight, simple, customizeable and ready to use modal in the global scope in the react project.
-
 ## Features
 
 - Lightweight
-- Build in simple modal, confirmation modal and async confirmation modal
+- Build in simple modal, slide pane, confirmation modal and async confirmation modal
 - Fully constomizeable and can be used with any UI framework
 - Invoked as a method so reduces the code base
 - Promotes reusability
@@ -32,7 +33,7 @@ React Global Modal is a lightweight, simple, customizeable and ready to use moda
 To install, you can use [npm](https://npmjs.org/) or [yarn](https://yarnpkg.com):
 
     $ npm install react-global-modal
-    $ yarn add react-modal
+    $ yarn add react-global-modal
 
 ## Usage
 
@@ -236,7 +237,7 @@ export default Example
 ```
 You can also include the header and footer in the component which will by displayed inside the modal but you have to disable the header present inside the modal by passing the props ``` hideHeader: true ```
 
-#### Modal as a SlidePane
+## Modal as a SlidePane
 The slide pane are the one that appears on the side that may be left or right of the screen. You can open existing modal as the slide pane:
 
 ```jsx
@@ -306,7 +307,7 @@ export default Example
 ```
 You can open slide pane by passing the props ``` isSlidePane: true ``` while opening the modal. Their is additional properties for side pane that is position which determines whether you want it be right or left.
 
-### Confirmation Modal
+## Confirmation Modal
 Confirmation modal is can be used to ask the user to perform the certain operation. You can invoke the confirmation similarly to that of normal modal.
 
 ```jsx
@@ -351,7 +352,7 @@ The confirmation modal can be used like above. It consist of list of properties 
 | confirmationClassName         | string                            |                      |                | It is used to provde the styles for inner most content of the modal |
 | actions                       | IButtonProps[]                    |                      |                 | You can define your own custiom actions list |
 
-### Async Confirmation Modal
+## Async Confirmation Modal
 You can use this modal to perfrom certain action based on the user response.
 
 ```jsx
