@@ -553,6 +553,7 @@ For working with react-global-modal and material ui, you can check the [Example]
 ##### 5. simple example with package itself
 For working with react-global-modal, you can check the [Example](https://github.com/bigyanpoudel/react-global-modal/tree/main/playground/react-global-modal-example)
 
+Note: In the case of customization, if you need more props you can pass  the prop while opening the modal and can access the same prop in your custom modal. You can also observe this in the example.
 # License
 
 MIT © [bigyanpoudel](https://github.com/bigyanpoudel)
