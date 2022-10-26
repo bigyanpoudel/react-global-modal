@@ -23,6 +23,7 @@ export type GlobalModalComponentProps = {
   width?: string
   isSlidePane?: boolean
   position?: 'right' | 'left'
+  [key: string]: any
 }
 export interface IGlobalModalOpenProps extends GlobalModalComponentProps {
   component?: React.FC<any> // React FC as component

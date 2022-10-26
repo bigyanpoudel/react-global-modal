@@ -1,4 +1,5 @@
 import clsx from 'clsx'
+import React from 'react'
 
 import { IButtonProps } from '../Modal/ModalActions'
 import { GlobalModal } from './Modal'
@@ -12,7 +13,9 @@ export interface AsyncConfirmationModalProps {
   confirmationBody?: React.FC
   confirmationClassName?: string
   className?: string
-  actions?: IButtonProps[]
+  actions?: IButtonProps[] | any
+  footer?: React.ReactNode
+  [key: string]: any
 }
 
 /**
@@ -26,6 +29,7 @@ export interface AsyncConfirmationModalProps {
  * @param confirmationBody React Functional Component
  * @param confirmationClassName string
  * @param className string
+ * @param footer React Node
  * @returns Promise
  */
 
@@ -39,6 +43,8 @@ export const AsyncConfirmationModal = ({
   confirmationClassName = '',
   className = '',
   actions,
+  footer,
+  ...args
 }: AsyncConfirmationModalProps) => {
   return new Promise<boolean>((resolve) => {
     const defaultAction: IButtonProps[] = [
@@ -68,10 +74,12 @@ export const AsyncConfirmationModal = ({
       hideCloseIcon: true,
       modalSize: 'sm',
       className: className,
+      footer: { footer },
       props: {
         message: message,
         confirmationClassName,
       },
+      ...args,
     })
   })
 }

@@ -15,7 +15,9 @@ export interface ConfirmationModalProps {
   className?: string
   confirmationBody?: React.FC
   confirmationClassName?: string
-  actions?: any[]
+  actions?: IButtonProps[] | any
+  footer?: React.ReactNode
+  [key: string]: any
 }
 
 /**
@@ -29,6 +31,7 @@ export interface ConfirmationModalProps {
  * @param onOkay Function
  * @param closable bool
  * @param confirmationBody React Functional Component
+ * @param footer React Node
  * @param confirmationClassName string
  */
 
@@ -44,6 +47,8 @@ export const ConfirmationModal = ({
   confirmationClassName = '',
   className = '',
   actions,
+  footer,
+  ...args
 }: ConfirmationModalProps) => {
   const modalAction: IButtonProps[] = [
     {
@@ -72,10 +77,12 @@ export const ConfirmationModal = ({
     hideCloseIcon: true,
     modalSize: 'sm',
     className: className,
+    footer: { footer },
     props: {
       message: message,
       confirmationClassName,
     },
+    ...args,
   })
 }
 

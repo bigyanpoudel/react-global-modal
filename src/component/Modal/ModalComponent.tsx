@@ -28,6 +28,8 @@ export interface IModalProps {
   position?: 'right' | 'left'
   isDark?: boolean
   disableTheme?: boolean
+  footer?: React.ReactNode
+  [key: string]: any
 }
 
 export const ModalComponent = forwardRef<HTMLDivElement, IModalProps>(
@@ -51,6 +53,7 @@ export const ModalComponent = forwardRef<HTMLDivElement, IModalProps>(
       modalSize = 'sm',
       isDark = false,
       disableTheme = false,
+      footer,
     }: IModalProps,
     ref: any,
   ): JSX.Element => {
@@ -66,17 +69,9 @@ export const ModalComponent = forwardRef<HTMLDivElement, IModalProps>(
       }
     }, [isDark, disableTheme])
 
-    const classes = clsx(
-      'modal',
-      'modal-open',
-      // {
-      //   'modal-open': open,
-      // },
-      className,
-      {
-        dark: isDark,
-      },
-    )
+    const classes = clsx('modal', 'modal-open', className, {
+      dark: isDark,
+    })
 
     const modalWrapper = clsx(
       // 'modal-wrapper',
@@ -143,7 +138,10 @@ export const ModalComponent = forwardRef<HTMLDivElement, IModalProps>(
               )}
             </div>
             <div className={modalBody}>{children}</div>
-            {actions?.length > 0 && <ModalActions actions={actions} className={actionClassName} />}
+            {footer && footer}
+            {actions?.length > 0 && !footer && (
+              <ModalActions actions={actions} className={actionClassName} />
+            )}
           </div>
         </div>
       </div>
