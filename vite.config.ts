@@ -16,12 +16,12 @@ export default defineConfig((configEnv) => ({
       linters: [new EsLinter({ configEnv })],
     }),
     dts({
-      include: ['src/component/'],
+      include: ['src/'],
     }),
   ],
   build: {
     lib: {
-      entry: resolve('src', 'component/index.ts'),
+      entry: resolve('src/', 'index.ts'),
       name: 'ReactGlobalModal',
       formats: ['es', 'umd'],
       fileName: (format) => `react-global-modal.${format}.js`,
