@@ -1,30 +1,8 @@
 import clsx from 'clsx'
 import React, { forwardRef } from 'react'
+import { IModalProps } from 'react-global-modal'
 
 import { Button, ModalActions, ModalHeader } from '../../atom'
-
-export type IModalProps = {
-  open?: boolean
-  responsive?: boolean
-  children?: any
-  className?: string
-  onClose?: () => void
-  modalSize?: 'xs' | 'sm' | 'md' | 'lg'
-  isCloseable?: boolean
-  closeButtonClassName?: string
-  title?: string
-  hideHeader?: boolean
-  headerComponent?: React.FC<any>
-  headerClassName?: string
-  actions?: any[]
-  actionClassName?: string
-  contentClassName?: string
-  onModalClose?: () => void
-  hideCloseIcon?: boolean
-  width?: string
-  isSlidePane?: boolean
-  position?: 'right' | 'left'
-}
 
 const CustomModalComponent = forwardRef<HTMLDivElement, IModalProps>(
   (
@@ -47,6 +25,7 @@ const CustomModalComponent = forwardRef<HTMLDivElement, IModalProps>(
       width,
       isSlidePane = false,
       position = 'right',
+      footer,
     }: IModalProps,
     ref,
   ): JSX.Element => {
@@ -127,7 +106,10 @@ const CustomModalComponent = forwardRef<HTMLDivElement, IModalProps>(
             )}
           </div>
           <div className={contentClasses}>{children}</div>
-          {actions?.length > 0 && <ModalActions actions={actions} className={actionClassName} />}
+          {footer && footer}
+          {actions?.length > 0 && !footer && (
+            <ModalActions actions={actions} className={actionClassName} />
+          )}
         </div>
       </div>
     )

@@ -54,7 +54,7 @@ export const ModalExample = () => {
     ConfirmationModal({
       title: 'Do you like react global modal',
       message: 'If you like, then rate the repo. Thankyou !',
-      confirmationClassName: 'h-20 p-3',
+      // confirmationClassName: 'h-20 p-3',
       onCancel: () => {
         // TODO ON CANCEL
       },

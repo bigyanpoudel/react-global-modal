@@ -1,28 +1,7 @@
-import { Modal } from 'antd'
+import { CloseOutlined } from '@ant-design/icons'
+import { Modal, ModalProps } from 'antd'
 import React from 'react'
-export type IModalProps = {
-  open?: boolean
-  responsive?: boolean
-  children?: any
-  className?: string
-  onClose?: () => void
-  modalSize?: 'xs' | 'sm' | 'md' | 'lg'
-  isCloseable?: boolean
-  closeButtonClassName?: string
-  title?: string
-  hideHeader?: boolean
-  headerComponent?: React.FC<any>
-  headerClassName?: string
-  actions?: any[]
-  actionClassName?: string
-  contentClassName?: string
-  onModalClose?: () => void
-  hideCloseIcon?: boolean
-  width?: string
-  isSlidePane?: boolean
-  position?: 'right' | 'left'
-  footerComponent?: React.ReactNode
-}
+import { IModalProps } from 'react-global-modal'
 
 // const {
 //   component: RenderInner,
@@ -40,7 +19,10 @@ export type IModalProps = {
 //   centered = true,
 // } = propsValues
 
-export const CustomModalComponent = React.forwardRef((propsValues: IModalProps, ref) => {
+type IAntModalProps = IModalProps & {
+  width?: number
+}
+export const CustomModalComponent = React.forwardRef((propsValues: IAntModalProps, ref) => {
   // const {
   //   component: RenderInner,
   //   props,
@@ -61,33 +43,23 @@ export const CustomModalComponent = React.forwardRef((propsValues: IModalProps, 
     children,
     open,
     className = '',
-    isCloseable = false,
+    isCloseable = true,
     title = 'Modal Header',
     onModalClose = () => {},
-    footerComponent,
+    footer,
+    width,
+    closeIconComponent,
   } = propsValues
-  // const onModalClose = (isClose: any) => {
-  //   if (!closable) return
-  //   if (isClose) {
-  //     closeModal()
-  //     onClose()
-  //   }
-  //   ModalUtil.close()
-  // }
-
-  // props closeIcon React.ReactNode deafult false
-  // footer React.ReactNode
-  // width
 
   return (
     <Modal
-      visible={open}
+      open={open}
       title={title}
       onCancel={onModalClose}
-      footer={footerComponent ? footerComponent : null}
-      width={500}
+      footer={footer ? [footer] : null}
+      width={width}
       className={className}
-      // closeIcon={closeIcon}
+      closeIcon={closeIconComponent ?? <CloseOutlined />}
       closable={isCloseable}
       centered={true}
     >

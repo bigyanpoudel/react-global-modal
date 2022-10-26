@@ -77,7 +77,7 @@ export const ConfirmationModal = ({
     hideCloseIcon: true,
     modalSize: 'sm',
     className: className,
-    footer: { footer },
+    footer: footer,
     props: {
       message: message,
       confirmationClassName,

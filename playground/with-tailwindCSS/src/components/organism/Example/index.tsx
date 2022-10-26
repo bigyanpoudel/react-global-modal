@@ -55,12 +55,30 @@ export const ModalExample = () => {
       title: 'Do you like react global modal',
       message: 'If you like, then rate the repo. Thankyou !',
       confirmationClassName: 'h-20 p-3',
-      onCancel: () => {
-        // TODO ON CANCEL
-      },
-      onOkay: () => {
-        // TODO ON OKAY
-      },
+      actions: [
+        {
+          title: 'Okay',
+          onClick: () => {
+            // TODO ON OKAY
+            GlobalModal.pop()
+          },
+          type: 'primary',
+          noAnimation: true,
+
+          className: 'w-[120px]',
+        },
+        {
+          title: 'Cancel',
+          onClick: () => {
+            // TODO ON CANCEL
+            GlobalModal.pop()
+          },
+          noAnimation: true,
+          type: 'error',
+
+          className: 'w-[120px]',
+        },
+      ],
     })
   }
 
