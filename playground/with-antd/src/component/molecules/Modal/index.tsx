@@ -1,5 +1,5 @@
 import { CloseOutlined } from '@ant-design/icons'
-import { Modal, Button } from 'antd'
+import { Button, Modal } from 'antd'
 import React from 'react'
 import { IModalProps } from 'react-global-modal'
 
@@ -49,24 +49,22 @@ export const CustomModalComponent = React.forwardRef((propsValues: IAntModalProp
     footer,
     width,
     closeIconComponent,
-    isConfirmation = false,
+    actions = [],
   } = propsValues
-
+  let footerComponent = null
+  if (actions.length > 0)
+    footerComponent = actions.map((el: any) => (
+      <Button key="back" onClick={el.key} className={el.className}>
+        {el.title}
+      </Button>
+    ))
+  if (footer) footerComponent = footer
   return (
     <Modal
       open={open}
       title={title}
       onCancel={onModalClose}
-      footer={footer ? footer? isConfirmation ? [
-        
-                    <Button key="back" onClick={handleCancel}>
-            Return
-          </Button>,
-          <Button key="submit" type="primary" loading={loading} onClick={handleOk}>
-            Submit
-          </Button>,
-        
-      ] : null}
+      footer={footerComponent}
       width={width}
       className={className}
       closeIcon={closeIconComponent ?? <CloseOutlined />}

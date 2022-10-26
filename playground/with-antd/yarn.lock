@@ -1171,10 +1171,10 @@ react-dom@^18.2.0:
     loose-envify "^1.1.0"
     scheduler "^0.23.0"
 
-react-global-modal@^0.0.9:
-  version "0.0.9"
-  resolved "https://registry.yarnpkg.com/react-global-modal/-/react-global-modal-0.0.9.tgz#a3ea7ddd32dd032f10a90242cca121c963190510"
-  integrity sha512-byYHipK5ecROQV/T4QHnUyzb+gTBJOm6H2lqnymZ+PZmOh3UomYd73SkbrUTRew1vAxTO+61qtMbTx6hKSr/Qg==
+react-global-modal@^0.0.10:
+  version "0.0.10"
+  resolved "https://registry.yarnpkg.com/react-global-modal/-/react-global-modal-0.0.10.tgz#1430340c591d42a3d4ea3afe04cc516d87eefc20"
+  integrity sha512-a7YNJxgvrY9QqcLO3gxSg4NwmrZ6XkMttsaSvZ4qcIS7RZ1yFT9+E0secUHnxB/bYAXoElrZvaz3mlGKjHLVXg==
 
 react-is@^16.12.0:
   version "16.13.1"

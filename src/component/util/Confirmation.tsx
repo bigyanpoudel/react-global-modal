@@ -17,8 +17,8 @@ export interface ConfirmationModalProps {
   confirmationClassName?: string
   actions?: IButtonProps[] | any
   footer?: React.ReactNode
-  okyActionProps: Record<any, any>
-  cancelActionProps: Record<any, any>
+  okyActionProps?: Record<any, any>
+  cancelActionProps?: Record<any, any>
   [key: string]: any
 }
 
