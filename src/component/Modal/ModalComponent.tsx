@@ -29,6 +29,7 @@ export interface IModalProps {
   isDark?: boolean
   disableTheme?: boolean
   footer?: React.ReactNode
+  closeIconComponent?: React.ReactNode
   [key: string]: any
 }
 
@@ -54,6 +55,7 @@ export const ModalComponent = forwardRef<HTMLDivElement, IModalProps>(
       isDark = false,
       disableTheme = false,
       footer,
+      closeIconComponent,
     }: IModalProps,
     ref: any,
   ): JSX.Element => {
@@ -116,6 +118,7 @@ export const ModalComponent = forwardRef<HTMLDivElement, IModalProps>(
                   className={headerClassName}
                   onBackdropClick={onModalClose}
                   hideCloseIcon={hideCloseIcon}
+                  closeIconComponent={closeIconComponent}
                 >
                   <>
                     {title ?? null}
@@ -124,16 +127,22 @@ export const ModalComponent = forwardRef<HTMLDivElement, IModalProps>(
                 </ModalHeader>
               ) : (
                 !hideCloseIcon && (
-                  <div
-                    className="close-wrapper close"
-                    onClick={() => {
-                      if (!isCloseable) {
-                        onModalClose()
-                      }
-                    }}
-                  >
-                    <div className="icon">x</div>
-                  </div>
+                  <>
+                    {closeIconComponent ? (
+                      closeIconComponent
+                    ) : (
+                      <div
+                        className="close-wrapper close"
+                        onClick={() => {
+                          if (!isCloseable) {
+                            onModalClose()
+                          }
+                        }}
+                      >
+                        <div className="icon">x</div>
+                      </div>
+                    )}
+                  </>
                 )
               )}
             </div>

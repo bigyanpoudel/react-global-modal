@@ -5,6 +5,7 @@ export interface IModalHeader {
   className?: string
   onBackdropClick?: () => void
   hideCloseIcon?: boolean
+  closeIconComponent: React.ReactNode
 }
 
 export const ModalHeader = ({
@@ -12,20 +13,24 @@ export const ModalHeader = ({
   className = '',
   onBackdropClick,
   hideCloseIcon = false,
+  closeIconComponent,
 }: IModalHeader) => {
   return (
     <div className={`modalHeader ${className}`}>
       <div className="modal-header-title">{children}</div>
-      {!hideCloseIcon && (
-        <div
-          className="close-wrapper"
-          onClick={() => {
-            onBackdropClick && onBackdropClick()
-          }}
-        >
-          <div className="icon">x</div>
-        </div>
-      )}
+      {!hideCloseIcon &&
+        (closeIconComponent ? (
+          closeIconComponent
+        ) : (
+          <div
+            className="close-wrapper"
+            onClick={() => {
+              onBackdropClick && onBackdropClick()
+            }}
+          >
+            <div className="icon">x</div>
+          </div>
+        ))}
     </div>
   )
 }
