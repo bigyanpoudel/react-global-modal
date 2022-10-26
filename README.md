@@ -114,6 +114,8 @@ The methods contain different others properties which are described below:
 |   width                       | string                            |                       |               | It is used to include the custom width to the modal |
 |isSlidePane                    | boolean                           |                       | false         | If it is true, then the modal will act as the slidePane and will be in right or left |
 | position                      |  'right' , 'left'                 |                       | right         | It can only be used when the ``` isSlidePane ```   is true. Using this you can align the slidPane to right or left |
+| footer                     |  React.ReactNode                |                       |          | You can pass custom footer to the modal |
+| closeIconComponent                    |  React.ReactNode                |                       |          | You can pass custom footer to the modal |
 
 ##### 3. pop
 You can use this method to close the modal. In order to simply close the modal you can use like below:
@@ -137,6 +139,13 @@ You can use this method for updating any props values inside the modal. And this
 ```
 In above method, ``` modalIndex ``` represents the index of opened modal. If you have one modal opened, then ``` modalIndex ``` will be 0 else if you have second modal opened on top of first one then the``` modalIndex ``` will be 1 and soon. 
 
+##### 5. closeAll
+You can use this method to close all the modal that are opened. In order to simply close all the modal that you have opened previously you can use like below:
+```jsx
+
+    GlobalModal.closeAll()
+
+```
 ### Examples
 
 #### 1. Simple example with in built header and no footer
@@ -350,7 +359,11 @@ The confirmation modal can be used like above. It consist of list of properties 
 | isCloseable                   | boolean                           |                      | true           | It indicate wheather the modal can be closed or not. If true, you can only close the modal manualy from the component inside the modal using the modal close method |
 | className                     | string                            |                      |                | It is used to provde the styles for outer most element of the modal |
 | confirmationClassName         | string                            |                      |                | It is used to provde the styles for inner most content of the modal |
-| actions                       | IButtonProps[]                    |                      |                 | You can define your own custiom actions list |
+| actions                       | IButtonProps[]   | any[]                 |                      |                 | You can define your own custiom actions list |
+| footer                       | React.ReactNode                 |                      |                 | You can pass custom footer to the modal |
+|  okyActionProps              | Record<any,any>                 |                      |                 | Adjust the styling of the okay or positive action button. |
+| cancelActionProps            | Record<any,any>                 |                      |                 | Adjust the styling of the cancel or negative action button |
+
 
 ## Async Confirmation Modal
 You can use this modal to perfrom certain action based on the user response.
@@ -394,8 +407,29 @@ The async confirmation modal can be used like above. It consist of list of prope
 | isCloseable                   | boolean                           |                      | true           | It indicate wheather the modal can be closed or not. If true, you can only close the modal manualy from the component inside the modal using the modal close method |
 | className                     | string                            |                      |                | It is used to provde the styles for outer most element of the modal |
 | confirmationClassName         | string                            |                      |                | It is used to provde the styles for inner most content of the modal |
-| actions                       | IButtonProps[]                    |                      |                 | You can define your own custiom actions list |
+| actions                       | IButtonProps[]   | any[]                 |                      |                 | You can define your own custiom actions list |
+| footer                       | React.ReactNode                 |                      |                 | You can pass custom footer to the modal |
+|  okyActionProps              | Record<any,any>                 |                      |                 | Adjust the styling of the okay or positive action button. |
+| cancelActionProps            | Record<any,any>                 |                      |                 | Adjust the styling of the cancel or negative action button |
 
+## Full customization with different UI framework
+The react-global-modal support customization of the existing modal which means you can use this package with any UI framework that you are currently working within your project. You can see the example inside the playground folder where customization is carried out with different UI framework.
+
+##### 1. With TailwindCSS
+For working with react-global-modal and tailwindCss, you can check the [Example](https://github.com/bigyanpoudel/react-global-modal/tree/main/playground/with-tailwindCSS)
+
+##### 2. With chakra-ui
+For working with react-global-modal and chakra ui, you can check the [Example](https://github.com/bigyanpoudel/react-global-modal/tree/main/playground/with-chakra-ui)
+
+##### 3. With antd 
+For working with react-global-modal and ant design, you can check the [Example](https://github.com/bigyanpoudel/react-global-modal/tree/main/playground/with-antd)
+
+
+##### 4. With material-ui
+For working with react-global-modal and material ui, you can check the [Example](https://github.com/bigyanpoudel/react-global-modal/tree/main/playground/with-material-ui)
+
+##### 5. simple example with package itself
+For working with react-global-modal, you can check the [Example](https://github.com/bigyanpoudel/react-global-modal/tree/main/playground/react-global-modal-example)
 
 # License
 
