@@ -70,7 +70,6 @@ export const ModalExample = () => {
       title: 'Do you like react global modal',
       message: 'If you like, then rate the repo. Thankyou !',
       confirmationClassName: 'h-20 p-3',
-      hideCloseIcon: false,
     })
   }
 
@@ -79,7 +78,6 @@ export const ModalExample = () => {
       title: 'Do you like react global modal',
       message: 'If you like, then rate the repo. Thankyou !',
       confirmationClassName: 'h-20 p-3',
-      hideCloseIcon: false,
     })
     if (isSelected) {
       //TODO IF SELECTED YES

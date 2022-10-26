@@ -1,5 +1,12 @@
 import {
   Button,
+  Drawer,
+  DrawerBody,
+  DrawerCloseButton,
+  DrawerContent,
+  DrawerFooter,
+  DrawerHeader,
+  DrawerOverlay,
   Modal,
   ModalBody,
   ModalCloseButton,
@@ -12,51 +19,76 @@ import React from 'react'
 import { IModalProps } from 'react-global-modal'
 type IAntModalProps = IModalProps & {
   width?: number
+  scrollBehavior?: 'inside' | 'outside'
+  isCentered?: boolean
+  size: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'full'
 }
 export const CustomModalComponent = React.forwardRef((propsValues: IAntModalProps, ref) => {
-  // const {
-  //   component: RenderInner,
-  //   props,
-  //   closable = true,
-  //   onClose = () => {},
-  //   closeModal = () => {},
-  //   isVisible,
-  //   width = 500,
-  //   title,
-  //   className = '',
-  //   modalFooter,
-  //   closeable = true,
-  //   closeIcon = false,
-  //   centered = true,
-  // } = propsValues
-
   const {
     children,
     open = false,
-    className = '',
     isCloseable,
     title = 'Modal Header',
     onModalClose = () => {},
     footer,
-    width,
     closeIconComponent,
     actions = [],
-    hideCloseIcon = true,
     isSlidePane = false,
     position,
+    hideHeader,
+    scrollBehavior = 'inside',
+    isCentered = false,
+    size = 'md',
   } = propsValues
-  console.log('Close', isCloseable)
+
+  if (isSlidePane) {
+    return (
+      <Drawer placement={position} isOpen={open} onClose={onModalClose} size={size}>
+        <DrawerOverlay />
+        <DrawerContent>
+          {!isCloseable && (!closeIconComponent ? <DrawerCloseButton /> : closeIconComponent)}
+          {!hideHeader && <DrawerHeader>{title}</DrawerHeader>}
+          <DrawerBody padding={0} position="relative">
+            {children}
+          </DrawerBody>
+          {footer && footer}
+          {actions.length > 0 && !footer && (
+            <DrawerFooter>
+              {actions.map((el: any) => (
+                <Button
+                  key={el.title}
+                  colorScheme={el.colorScheme}
+                  mr={3}
+                  onClick={el.onClick}
+                  variant={el.variant ?? 'ghost'}
+                >
+                  {el.title}
+                </Button>
+              ))}
+            </DrawerFooter>
+          )}
+        </DrawerContent>
+      </Drawer>
+    )
+  }
   return (
-    <Modal isOpen={open} onClose={onModalClose} closeOnOverlayClick={isCloseable}>
+    <Modal
+      isOpen={open}
+      onClose={onModalClose}
+      closeOnOverlayClick={!isCloseable}
+      scrollBehavior={scrollBehavior}
+      isCentered={isCentered}
+      size={size}
+    >
       <ModalOverlay />
       <ModalContent>
-        <ModalHeader>Modal Title</ModalHeader>
+        {!hideHeader && <ModalHeader>Modal Title</ModalHeader>}
         {!isCloseable && <ModalCloseButton />}
-        <ModalBody>
-          <h1>hasdasdasdasd</h1>
+        <ModalBody padding={0} position="relative">
+          {children}
         </ModalBody>
-
-        {actions.length > 0 && (
+        {footer && footer}
+        {actions.length > 0 && !footer && (
           <ModalFooter>
             {actions.map((el: any) => (
               <Button

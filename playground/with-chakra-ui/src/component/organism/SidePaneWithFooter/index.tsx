@@ -40,8 +40,10 @@ export const SlidePaneWithFooter = ({
     <div className={classes.conatiner}>
       <div className="p-3">{title}</div>
       <div className={classes.footer}>
-        <Button onClick={onPress}>Confirm</Button>
-        <Button onClick={onClose} className={classes.cancelButton}>
+        <Button onClick={onPress} colorScheme="green">
+          Confirm
+        </Button>
+        <Button onClick={onClose} className={classes.cancelButton} colorScheme="red">
           Cancel
         </Button>
       </div>

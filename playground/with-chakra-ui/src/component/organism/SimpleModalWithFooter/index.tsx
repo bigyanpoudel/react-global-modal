@@ -32,8 +32,14 @@ export const SimpleModalWithFooter = () => {
   return (
     <div className={classes.conatiner}>
       <div className={classes.footer}>
-        <Button onClick={() => GlobalModal.pop()}>Confirm</Button>
-        <Button onClick={() => GlobalModal.pop()} className={classes.cancelButton}>
+        <Button onClick={() => GlobalModal.pop()} colorScheme="blue">
+          Confirm
+        </Button>
+        <Button
+          onClick={() => GlobalModal.pop()}
+          className={classes.cancelButton}
+          colorScheme="red"
+        >
           Cancel
         </Button>
       </div>

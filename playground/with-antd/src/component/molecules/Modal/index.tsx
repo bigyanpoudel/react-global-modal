@@ -5,24 +5,9 @@ import { IModalProps } from 'react-global-modal'
 
 type IAntModalProps = IModalProps & {
   width?: number
+  centered?: boolean
 }
 export const CustomModalComponent = React.forwardRef((propsValues: IAntModalProps, ref) => {
-  // const {
-  //   component: RenderInner,
-  //   props,
-  //   closable = true,
-  //   onClose = () => {},
-  //   closeModal = () => {},
-  //   isVisible,
-  //   width = 500,
-  //   title,
-  //   className = '',
-  //   modalFooter,
-  //   closeable = true,
-  //   closeIcon = false,
-  //   centered = true,
-  // } = propsValues
-
   const {
     children,
     open,
@@ -34,9 +19,9 @@ export const CustomModalComponent = React.forwardRef((propsValues: IAntModalProp
     width,
     closeIconComponent,
     actions = [],
-    hideCloseIcon = true,
     isSlidePane = false,
     position,
+    centered = true,
   } = propsValues
 
   let footerComponent: any = null
@@ -59,7 +44,7 @@ export const CustomModalComponent = React.forwardRef((propsValues: IAntModalProp
       <Drawer
         title={title}
         placement={position}
-        closable={hideCloseIcon}
+        closable={isCloseable}
         onClose={onModalClose}
         open={open}
         size={width}
@@ -87,8 +72,8 @@ export const CustomModalComponent = React.forwardRef((propsValues: IAntModalProp
       footer={footerComponent}
       width={width}
       closeIcon={closeIcon}
-      closable={hideCloseIcon}
-      centered={true}
+      closable={isCloseable}
+      centered={centered}
       bodyStyle={{
         margin: 0,
         padding: 0,

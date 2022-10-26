@@ -69,8 +69,12 @@ export const ModalExample = () => {
     ConfirmationModal({
       title: 'Do you like react global modal',
       message: 'If you like, then rate the repo. Thankyou !',
-      confirmationClassName: 'h-20 p-3',
-      hideCloseIcon: false,
+      okyActionProps: {
+        colorScheme: 'blue',
+      },
+      cancelActionProps: {
+        colorScheme: 'red',
+      },
     })
   }
 
@@ -78,8 +82,12 @@ export const ModalExample = () => {
     const isSelected = await AsyncConfirmationModal({
       title: 'Do you like react global modal',
       message: 'If you like, then rate the repo. Thankyou !',
-      confirmationClassName: 'h-20 p-3',
-      hideCloseIcon: false,
+      okyActionProps: {
+        colorScheme: 'blue',
+      },
+      cancelActionProps: {
+        colorScheme: 'red',
+      },
     })
     if (isSelected) {
       //TODO IF SELECTED YES
