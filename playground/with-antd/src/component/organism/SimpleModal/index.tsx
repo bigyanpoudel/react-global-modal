@@ -1,5 +1,5 @@
 import React from 'react'
 
 export const SimpleModal = () => {
-  return <div>index</div>
+  return <div className="h-[50vh]">index</div>
 }

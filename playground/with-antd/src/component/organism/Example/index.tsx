@@ -1,13 +1,28 @@
 import { Button } from 'antd'
+import { wrap } from 'module'
 import React from 'react'
 import { AsyncConfirmationModal, ConfirmationModal, GlobalModal } from 'react-global-modal'
+import { createUseStyles } from 'react-jss'
 
 import { SlidePaneWithFooter } from '../SidePaneWithFooter'
 import { SimpleModal } from '../SimpleModal'
 import { SimpleModalWithFooter } from '../SimpleModalWithFooter'
 import { SlidePanComponent } from '../SlidePan'
-
+const useStyles = createUseStyles({
+  conatiner: {
+    padding: 200,
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    width: '100%',
+    flexWrap: 'wrap',
+    gap: 20,
+  },
+})
 export const ModalExample = () => {
+  const classes = useStyles()
+
   const openSimpleModal = () => {
     GlobalModal.push({
       component: SimpleModal,
@@ -37,6 +52,7 @@ export const ModalExample = () => {
       title: 'Simple Modal Example',
       modalSize: 'sm',
       isSlidePane: true,
+      width: '800px',
       props: {
         title: 'This is props of sidePane',
         onClose: () => {
@@ -54,15 +70,8 @@ export const ModalExample = () => {
     ConfirmationModal({
       title: 'Do you like react global modal',
       message: 'If you like, then rate the repo. Thankyou !',
-      // confirmationClassName: 'h-20 p-3',
-      onCancel: () => {
-        // TODO ON CANCEL
-      },
-      onOkay: () => {
-        // TODO ON OKAY
-      },
-
-      // footer={true}
+      confirmationClassName: 'h-20 p-3',
+      hideCloseIcon: false,
     })
   }
 
@@ -71,6 +80,7 @@ export const ModalExample = () => {
       title: 'Do you like react global modal',
       message: 'If you like, then rate the repo. Thankyou !',
       confirmationClassName: 'h-20 p-3',
+      hideCloseIcon: false,
     })
     if (isSelected) {
       //TODO IF SELECTED YES
@@ -80,7 +90,7 @@ export const ModalExample = () => {
   }
 
   return (
-    <div className="container flex flex-row flex-wrap gap-5 py-[200px] h-full items-center justify-center">
+    <div className={classes.conatiner}>
       <Button onClick={openSimpleModal} type="primary">
         Simple Modal
       </Button>
