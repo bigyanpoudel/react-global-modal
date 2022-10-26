@@ -1,4 +1,5 @@
-import './index.css'
+// import 'react-global-modal/dist/style.css'
+import './index.scss'
 
 import React from 'react'
 import ReactDOM from 'react-dom/client'

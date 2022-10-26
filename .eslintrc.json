@@ -18,6 +18,7 @@
     "sourceType": "module"
   },
   "plugins": ["react", "@typescript-eslint", "react-hooks", "prettier","simple-import-sort"],
+  "ignorePatterns": ["**/*.js"],
   "rules": {
     "camelcase": "error",
     "no-duplicate-imports": "error",

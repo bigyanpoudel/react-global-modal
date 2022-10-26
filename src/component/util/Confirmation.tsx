@@ -15,7 +15,7 @@ export interface ConfirmationModalProps {
   className?: string
   confirmationBody?: React.FC
   confirmationClassName?: string
-  actions?: IButtonProps[]
+  actions?: any[]
 }
 
 /**
