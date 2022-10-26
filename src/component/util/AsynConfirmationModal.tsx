@@ -15,6 +15,8 @@ export interface AsyncConfirmationModalProps {
   className?: string
   actions?: IButtonProps[] | any
   footer?: React.ReactNode
+  okyActionProps: Record<any, any>
+  cancelActionProps: Record<any, any>
   [key: string]: any
 }
 
@@ -44,10 +46,12 @@ export const AsyncConfirmationModal = ({
   className = '',
   actions,
   footer,
+  okyActionProps,
+  cancelActionProps,
   ...args
 }: AsyncConfirmationModalProps) => {
   return new Promise<boolean>((resolve) => {
-    const defaultAction: IButtonProps[] = [
+    const defaultAction: IButtonProps[] | any[] = [
       {
         title: okayLabel,
         onClick: () => {
@@ -55,6 +59,7 @@ export const AsyncConfirmationModal = ({
           GlobalModal.pop()
         },
         className: 'btn-primary',
+        ...okyActionProps,
       },
       {
         title: cancelLabel,
@@ -63,6 +68,7 @@ export const AsyncConfirmationModal = ({
           GlobalModal.pop()
         },
         className: 'btn-error',
+        ...cancelActionProps,
       },
     ]
 

@@ -61,6 +61,18 @@ export const ModalExample = () => {
       onOkay: () => {
         // TODO ON OKAY
       },
+      footer: (
+        <>
+          <Button key="back" onClick={() => GlobalModal.pop()}>
+            Return
+          </Button>
+          <Button key="submit" type="primary" onClick={() => GlobalModal.pop()}>
+            Submit
+          </Button>
+        </>
+      ),
+
+      // footer={true}
     })
   }
 
@@ -69,6 +81,11 @@ export const ModalExample = () => {
       title: 'Do you like react global modal',
       message: 'If you like, then rate the repo. Thankyou !',
       confirmationClassName: 'h-20 p-3',
+      actions: [
+        {
+          title: {},
+        },
+      ],
     })
     if (isSelected) {
       //TODO IF SELECTED YES

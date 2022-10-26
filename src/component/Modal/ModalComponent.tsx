@@ -18,7 +18,7 @@ export interface IModalProps {
   hideHeader?: boolean
   headerComponent?: React.FC<any>
   headerClassName?: string
-  actions?: IButtonProps[]
+  actions?: IButtonProps[] | any[]
   actionClassName?: string
   contentClassName?: string
   onModalClose?: () => void
