@@ -1,3 +1,4 @@
+export type { IModalProps } from './Modal/ModalComponent'
 export { ModalComponent } from './Modal/ModalComponent'
 export type { GlobalModalComponentType } from './ModalWrapper'
 export { GlobalModalComponent } from './ModalWrapper'
@@ -11,5 +12,4 @@ export { AsyncConfirmationModal } from './util/AsynConfirmationModal'
 export type { ConfirmationModalProps } from './util/Confirmation'
 export { ConfirmationModal } from './util/Confirmation'
 export { GlobalModal } from './util/Modal'
-
 import './styles/Modal.css'

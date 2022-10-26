@@ -1,10 +1,9 @@
 import './App.css'
 
-import React, { forwardRef, useEffect } from 'react'
+import React, { useEffect } from 'react'
 
-import { AsyncConfirmationModal, GlobalModalWrapper } from './component'
+import { GlobalModalWrapper } from './component'
 import { IModalProps, ModalComponent } from './component/Modal/ModalComponent'
-import { ConfirmationModal } from './component/util/Confirmation'
 import { GlobalModal } from './component/util/Modal'
 import Example from './Example/Example'
 
