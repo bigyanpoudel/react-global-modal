@@ -12,7 +12,7 @@ export const CustomModalComponent = React.forwardRef((propsValues: IAntModalProp
     children,
     open,
     className = '',
-    isCloseable = true,
+    isCloseable,
     title = 'Modal Header',
     onModalClose = () => {},
     footer,
@@ -44,7 +44,7 @@ export const CustomModalComponent = React.forwardRef((propsValues: IAntModalProp
       <Drawer
         title={title}
         placement={position}
-        closable={isCloseable}
+        closable={!isCloseable}
         onClose={onModalClose}
         open={open}
         size={width}
@@ -72,7 +72,7 @@ export const CustomModalComponent = React.forwardRef((propsValues: IAntModalProp
       footer={footerComponent}
       width={width}
       closeIcon={closeIcon}
-      closable={isCloseable}
+      closable={!isCloseable}
       centered={centered}
       bodyStyle={{
         margin: 0,

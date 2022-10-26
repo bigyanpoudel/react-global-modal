@@ -9,14 +9,14 @@ import { SimpleModalWithFooter } from '../SimpleModalWithFooter'
 import { SlidePanComponent } from '../SlidePan'
 const useStyles = makeStyles(() => ({
   conatiner: {
-    padding: 200,
+    // padding: 20,
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    width: '100%',
     flexWrap: 'wrap',
     gap: 20,
+    width: '90%',
   },
 }))
 export const ModalExample = () => {
