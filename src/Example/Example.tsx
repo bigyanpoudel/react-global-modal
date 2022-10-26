@@ -18,6 +18,21 @@ const Example = () => {
   )
 }
 const ComponentText = ({ test }: { test: string }) => {
+  const openModal = async () => {
+    GlobalModal.push({
+      component: () => {
+        return (
+          <div>
+            <button onClick={() => GlobalModal.closeAll()}>Close all</button>
+          </div>
+        )
+      },
+      props: {
+        test: 'Testing',
+      },
+    })
+  }
+
   return (
     <div
       style={{
@@ -32,6 +47,7 @@ const ComponentText = ({ test }: { test: string }) => {
         Header
       </div>
       hello {test}
+      <button onClick={openModal}>Open</button>
       <div
         style={{
           position: 'absolute',

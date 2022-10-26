@@ -29,4 +29,9 @@ export class GlobalModal {
       ;((this as any)._globalModalRef as any).close(index)
     }
   }
+  static closeAll() {
+    if ((this as any)._globalModalRef) {
+      ;((this as any)._globalModalRef as any).closeAll()
+    }
+  }
 }
