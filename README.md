@@ -1,6 +1,6 @@
 # React-Global-Modal
 
-*React Global Modal - One For All*
+### *React Global Modal - One For All*
 
 
 React Global Modal is a lightweight, simple, customizeable and ready to use modal in the global scope in the react project.
