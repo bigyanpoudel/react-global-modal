@@ -1,4 +1,4 @@
-import { Button } from 'antd'
+import { Button } from '@chakra-ui/react'
 import React from 'react'
 import { AsyncConfirmationModal, ConfirmationModal, GlobalModal } from 'react-global-modal'
 import { createUseStyles } from 'react-jss'
@@ -90,24 +90,12 @@ export const ModalExample = () => {
 
   return (
     <div className={classes.conatiner}>
-      <Button onClick={openSimpleModal} type="primary">
-        Simple Modal
-      </Button>
-      <Button onClick={openSimpleModalWithFooter} type="primary">
-        Simple Modal with footer
-      </Button>
-      <Button onClick={openSidePane} type="primary">
-        Open slidePane
-      </Button>
-      <Button onClick={openSidePaneWithFooter} type="primary">
-        Open slidePane with footer
-      </Button>
-      <Button onClick={openConfirmationModal} type="primary">
-        Simple Confirmation Modal
-      </Button>
-      <Button onClick={openAsyncConfirmationModal} type="primary">
-        Simple Async Confirmation Modal
-      </Button>
+      <Button onClick={openSimpleModal}>Simple Modal</Button>
+      <Button onClick={openSimpleModalWithFooter}>Simple Modal with footer</Button>
+      <Button onClick={openSidePane}>Open slidePane</Button>
+      <Button onClick={openSidePaneWithFooter}>Open slidePane with footer</Button>
+      <Button onClick={openConfirmationModal}>Simple Confirmation Modal</Button>
+      <Button onClick={openAsyncConfirmationModal}>Simple Async Confirmation Modal</Button>
     </div>
   )
 }

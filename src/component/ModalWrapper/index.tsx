@@ -35,6 +35,7 @@ export const GlobalModalComponent = forwardRef(
           open={isOpen || false}
           width={width}
           onModalClose={onModalClose}
+          isCloseable={isCloseable}
           {...args}
           ref={ref}
         >

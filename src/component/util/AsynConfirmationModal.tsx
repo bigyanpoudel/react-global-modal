@@ -40,7 +40,7 @@ export const AsyncConfirmationModal = ({
   okayLabel = 'Confirm',
   message = 'AsynConfirmation Modal message',
   title = 'AsyncConfirmation Modal Title',
-  isClosable = false,
+  isClosable = true,
   confirmationBody: ConfirmationBody,
   confirmationClassName = '',
   className = '',
