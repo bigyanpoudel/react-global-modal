@@ -71,6 +71,36 @@ const ModalExample = () => {
       },
     })
   }
+  const openModal3 = () => {
+    GlobalModal.push({
+      component: () => (
+        <div style={{ height: '500', padding: '20px' }}>
+          <button onClick={() => GlobalModal.closeAll()}>close all</button>
+        </div>
+      ),
+    })
+  }
+
+  const openModal2 = () => {
+    GlobalModal.push({
+      component: () => (
+        <div style={{ height: '400', padding: '20px' }}>
+          <button onClick={openModal3}>Open new</button>
+        </div>
+      ),
+    })
+  }
+
+  const openModal = () => {
+    GlobalModal.push({
+      component: () => (
+        <div style={{ height: '400', padding: '20px' }}>
+          <button onClick={openModal2}>Open new</button>
+        </div>
+      ),
+    })
+  }
+
   return (
     <div className={classes.conatiner}>
       <button onClick={openSimpleModal}>Simple Modal</button>
@@ -78,6 +108,7 @@ const ModalExample = () => {
       <button onClick={confirmationModalAsync}>Async confirmation modal</button>
       <button onClick={confirmation}>confirmation modal</button>
       <button onClick={openSlidePane}>Open slide pane</button>
+      <button onClick={openModal}>Open new</button>
     </div>
   )
 }

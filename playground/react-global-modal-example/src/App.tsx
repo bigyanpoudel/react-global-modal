@@ -12,6 +12,7 @@ function App() {
   useEffect(() => {
     GlobalModal.setUpModal(globalModalRef)
   }, [])
+
   return (
     <div className="App">
       <ModalExample />

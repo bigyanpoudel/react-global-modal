@@ -87,8 +87,10 @@ export class GlobalModalWrapper extends Component<
   closeAll = () => {
     const { modals } = this.state
     modals.forEach(() => {
-      modals.splice(modals.length - 1, 1)
-      this.setState({ modals })
+      setTimeout(() => {
+        modals.splice(modals.length - 1, 1)
+        this.setState({ modals })
+      }, 10)
       if (modals[modals.length - 1]) {
         modals[modals.length - 1].isOpen = false
         this.setState({ modals })
