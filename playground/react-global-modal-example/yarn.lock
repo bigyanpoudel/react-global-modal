@@ -844,10 +844,10 @@ react-dom@^18.2.0:
     loose-envify "^1.1.0"
     scheduler "^0.23.0"
 
-react-global-modal@^0.0.16:
-  version "0.0.16"
-  resolved "https://registry.yarnpkg.com/react-global-modal/-/react-global-modal-0.0.16.tgz#905f1bc333bbb91f0d8e6a83a27744ccd6e290e9"
-  integrity sha512-oOwge5MAwcRQ67mV+gIRtP755yfzYB7SFnGViFoKSaNs5nopEg0AZIGxI7OD0iR1Efbwo5AddvoeSDPcSJ5c8A==
+react-global-modal@^0.0.17:
+  version "0.0.17"
+  resolved "https://registry.yarnpkg.com/react-global-modal/-/react-global-modal-0.0.17.tgz#319175bfa21c2672454fbdd7e9e21026c1fa4d46"
+  integrity sha512-jOBAlPE9PRX1dRLlsTSpiMjcFng1+qGQwLaBC3Y9YbVCEo0pjF3WBZ0L0h/vb2hiMf/GpNDkmXuYH5orJCWiIw==
 
 react-is@^16.13.1, react-is@^16.7.0:
   version "16.13.1"
