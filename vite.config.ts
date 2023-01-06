@@ -9,14 +9,14 @@ import * as packageJson from './package.json'
 // https://vitejs.dev/config/
 export default defineConfig((configEnv) => ({
   plugins: [
+    dts({
+      include: ['src/'],
+    }),
     react(),
     tsConfigPaths(),
     linterPlugin({
       include: ['./src}/**/*.{ts,tsx}'],
       linters: [new EsLinter({ configEnv })],
-    }),
-    dts({
-      include: ['src/'],
     }),
   ],
   build: {
