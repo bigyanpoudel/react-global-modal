@@ -1,10 +1,9 @@
 # React Global Modal
+React Global Modal is a lightweight, simple, customizable and ready to use modal in the global scope in the react project.
 
 [![npm version](https://img.shields.io/npm/v/react-global-modal.svg?style=flat-square)](https://www.npmjs.com/package/react-global-modal)
 [![npm downloads](https://img.shields.io/npm/dm/react-global-modal.svg?style=flat-square)](https://www.npmjs.com/package/react-global-modal)
 ![npm bundle size](https://img.shields.io/bundlephobia/minzip/react-global-modal)
-
-React Global Modal is a lightweight, simple, customizable and ready to use modal in the global scope in the react project.
 
 ## Features
 
