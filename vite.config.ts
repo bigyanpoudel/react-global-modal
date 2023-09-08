@@ -1,5 +1,5 @@
 import react from '@vitejs/plugin-react'
-import { resolve } from 'node:path'
+import path from 'node:path'
 import { defineConfig } from 'vite'
 import dts from 'vite-plugin-dts'
 import { EsLinter, linterPlugin } from 'vite-plugin-linter'
@@ -21,7 +21,7 @@ export default defineConfig((configEnv) => ({
   ],
   build: {
     lib: {
-      entry: resolve('src/', 'index.ts'),
+      entry: path.join(__dirname, 'src', 'index.ts'),
       name: 'ReactGlobalModal',
       formats: ['es', 'umd'],
       fileName: (format) => `react-global-modal.${format}.js`,
@@ -29,5 +29,9 @@ export default defineConfig((configEnv) => ({
     rollupOptions: {
       external: [...Object.keys(packageJson.peerDependencies)],
     },
+    globals: {
+      react: 'React',
+    },
   },
+ 
 }))

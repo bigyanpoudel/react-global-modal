@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 
 import { IButtonProps } from '../Modal/ModalActions'
-import { IModalProps } from '../Modal/ModalComponent'
 import { GlobalModalComponent } from '.'
 
 export type GlobalModalComponentProps = {
