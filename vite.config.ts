@@ -5,12 +5,11 @@ import dts from 'vite-plugin-dts'
 import { EsLinter, linterPlugin } from 'vite-plugin-linter'
 import tsConfigPaths from 'vite-tsconfig-paths'
 
-import * as packageJson from './package.json'
 // https://vitejs.dev/config/
 export default defineConfig((configEnv) => ({
   plugins: [
     dts({
-      include: ['src/'],
+      insertTypesEntry: true,
     }),
     react(),
     tsConfigPaths(),
@@ -21,17 +20,21 @@ export default defineConfig((configEnv) => ({
   ],
   build: {
     lib: {
-      entry: path.join(__dirname, 'src', 'index.ts'),
+      entry: path.join(__dirname, './src/index.ts'),
       name: 'ReactGlobalModal',
       formats: ['es', 'umd'],
       fileName: (format) => `react-global-modal.${format}.js`,
     },
     rollupOptions: {
-      external: [...Object.keys(packageJson.peerDependencies)],
+      external: ["react", "react-dom"],
+      output: {
+        globals: {
+          react: "React",
+          "react-dom": "ReactDOM",
+        },
+      },
     },
-    globals: {
-      react: 'React',
-    },
+   
   },
  
 }))

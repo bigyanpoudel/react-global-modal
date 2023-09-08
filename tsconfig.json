@@ -19,11 +19,11 @@
      "declarationMap": true,
     "baseUrl": ".",
      "paths": {
-      "react-global-modal": [ "src/index.ts" ]
+      "react-global-modal": [ "./src/index.ts" ]
     },
     "typeRoots": [
       "node_modules/@types",
-      "src/index.d.ts"
+      "./src/index.d.ts"
     ]
   },
   "include": ["./src"],
