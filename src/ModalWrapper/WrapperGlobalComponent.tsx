@@ -33,6 +33,23 @@ export interface IGlobalModalOpenProps extends GlobalModalComponentProps {
 export type GlobalModalWrapperProps = {
   customModal?: React.FC<any>
 }
+/**
+ * GlobalModalWrapper is a higher-order component that wraps another component
+ * and provides it with modal functionality. It uses the GlobalModalComponent
+ * to render the wrapped component inside a modal dialog.
+ *
+ * @component
+ *
+ * @param {object} props - The properties that define the behavior of the modal and the wrapped component.
+ * @param {boolean} props.isOpen - Determines whether the modal is open or not.
+ * @param {React.ComponentType} props.component - The component to be wrapped and rendered inside the modal.
+ * @param {object} props.props - The properties to pass to the wrapped component.
+ * @param {boolean} [props.isCloseable=false] - Determines whether the modal can be closed by the user.
+ * @param {function} [props.onClose=() => {}] - The function to call when the modal is closed.
+ * @param {string} props.width - The width of the modal.
+ *
+ * @returns {React.Component} The GlobalModalWrapper component.
+ */
 export class GlobalModalWrapper extends Component<
   GlobalModalWrapperProps,
   { modals: IGlobalModalOpenProps[] }

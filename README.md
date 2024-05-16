@@ -25,6 +25,7 @@ React Global Modal is a lightweight, simple, customizable and ready to use modal
   - [Modal as a SlidePane](#modal-as-a-slidepane)
   - [Confirmation Modal](#confirmation-modal)
   - [Async confirmation Modal](#async-confirmation-modal)
+  - [Important Note for TypeScript Users](#important-note-for-typescript-users)
 
 ## Installation
 
@@ -548,6 +549,25 @@ For working with react-global-modal and material ui, you can check the [Example]
 
 ##### 5. simple example with package itself
 For working with react-global-modal, you can check the [Example](https://github.com/bigyanpoudel/react-global-modal/tree/main/playground/react-global-modal-example)
+
+
+## Important Note for TypeScript Users
+If you're using the Vite default template with TypeScript, you might encounter issues with type declarations not being found. This is because the default `tsconfig.json` file that comes with the template sets the `moduleResolution` option to `"Bundler"`.
+
+The `moduleResolution` option controls how TypeScript resolves module imports. The `"Bundler"` option is designed to work with bundlers like Webpack or Rollup, which have their own custom module resolution logic.
+
+However, Vite doesn't use custom module resolution logic. Instead, it uses Node.js-style module resolution. This means that when you import a module, TypeScript will look for an `index.ts` (or `index.d.ts` for type declarations) file in the specified directory.
+
+To fix the issue with type declarations not being found, you should change the `moduleResolution` option in your `tsconfig.json` file to `"Node"`. Here's how you can do this:
+
+```jsonc
+{
+  "compilerOptions": {
+    "moduleResolution": "Node",
+    ...
+  },
+  ...
+}
 
 Note: In the case of customization, if you need more props you can pass  the prop while opening the modal and can access the same prop in your custom modal. You can also observe this in the example.
 # License
