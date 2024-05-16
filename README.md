@@ -568,6 +568,7 @@ To fix the issue with type declarations not being found, you should change the `
   },
   ...
 }
+```
 
 Note: In the case of customization, if you need more props you can pass  the prop while opening the modal and can access the same prop in your custom modal. You can also observe this in the example.
 # License
